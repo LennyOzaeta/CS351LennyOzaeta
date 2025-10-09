@@ -1,6 +1,6 @@
 /*
     Author: Lenny Ozaeta
-    Assignment: Follow Along Lesson 4
+    Assignment: Follow Along Lesson 4 and 5
     Description: Controls platformer player
  */
 using System.Collections;
@@ -21,9 +21,16 @@ public class PlatformerPlayerController : MonoBehaviour
 
     private bool isGrounded; // Boolean to keep track of if we are touching the ground
 
+    // Set these references in Inspector
+    public AudioClip jumpSound; // Set this to jump sound
+    private AudioSource playerAudio; // Set this to player audio
+
     // Start is called before the first frame update
     void Start()
     {
+        // Set reference to player audio source
+        playerAudio = GetComponent<AudioSource>();
+
         // Get Rigidbody2D component attached to GameObject
         rb = GetComponent<Rigidbody2D>();
 
@@ -44,6 +51,8 @@ public class PlatformerPlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce); // Apply upward force for jumping
+
+            playerAudio.PlayOneShot(jumpSound, 1.0f); // Play jump sound effect
         }
     }
 
