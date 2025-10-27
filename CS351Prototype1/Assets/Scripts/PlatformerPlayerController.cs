@@ -1,6 +1,6 @@
 /*
     Author: Lenny Ozaeta
-    Assignment: Follow Along Lesson 4 and 5
+    Assignment: Follow Along Lesson 4, 5, and 6
     Description: Controls platformer player
  */
 using System.Collections;
@@ -25,9 +25,14 @@ public class PlatformerPlayerController : MonoBehaviour
     public AudioClip jumpSound; // Set this to jump sound
     private AudioSource playerAudio; // Set this to player audio
 
+    private Animator animator; // Reference to animator
+
     // Start is called before the first frame update
     void Start()
     {
+        // Set reference to animator
+        animator = GetComponent<Animator>();
+
         // Set reference to player audio source
         playerAudio = GetComponent<AudioSource>();
 
@@ -61,10 +66,16 @@ public class PlatformerPlayerController : MonoBehaviour
         // Move player using RigidBody2 in FixedUpdate
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
+        // Set animator parameter xVelocityAbs to absolute value of x velocity
+        animator.SetFloat("xVelocityAbs", Mathf.Abs(rb.velocity.x));
+        // Set animator parameter yVelocity to y velocity
+        animator.SetFloat("yVelocity", rb.velocity.y);
+
         // Check if player is grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // TODO: Optionally, add animations or other behavior (based on player state) here
+        // Set animator parameter onGround to isGrounded
+        animator.SetBool("onGround", isGrounded);
 
         // Ensure player facing direction of movement
         if (horizontalInput > 0)
