@@ -1,6 +1,6 @@
 /*
     Author: Lenny Ozaeta
-    Assignment: Follow Along Lesson 4, 5, and 6
+    Assignment: Follow Along Lesson 4, 5, 6, 7
     Description: Controls platformer player
  */
 using System.Collections;
@@ -77,14 +77,16 @@ public class PlatformerPlayerController : MonoBehaviour
         // Set animator parameter onGround to isGrounded
         animator.SetBool("onGround", isGrounded);
 
-        // Ensure player facing direction of movement
+        // Rotate player sprite with transform.rotate to face right or left based on horizontal input
         if (horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f); // Facing right
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            // transform.localScale = new Vector3(1f, 1f, 1f); // Facing right
         }
         else if (horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Facing left
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            // transform.localScale = new Vector3(-1f, 1f, 1f); // Facing left
 
         }
     }
