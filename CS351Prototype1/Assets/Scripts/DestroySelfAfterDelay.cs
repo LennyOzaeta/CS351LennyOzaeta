@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-    Follow Along Lesson 7
+    Follow Along Lesson 7, 9
     Description: Class that controls destruction of objects (attach this to EnemyDeathEffect prefab)
 */
 

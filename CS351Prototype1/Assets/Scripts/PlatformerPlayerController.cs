@@ -1,7 +1,7 @@
 /*
     Author: Lenny Ozaeta
-    Assignment: Follow Along Lesson 4, 5, 6, 7
-    Description: Controls platformer player
+    Assignment: Follow Along Lesson 4, 5, 6, 7, 9
+    Description: Controls the main platformer player
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -63,8 +63,11 @@ public class PlatformerPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Move player using RigidBody2 in FixedUpdate
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        if (!PlayerHealth.hitRecently)
+        {
+            // Move player using RigidBody2 in FixedUpdate
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        }
 
         // Set animator parameter xVelocityAbs to absolute value of x velocity
         animator.SetFloat("xVelocityAbs", Mathf.Abs(rb.velocity.x));

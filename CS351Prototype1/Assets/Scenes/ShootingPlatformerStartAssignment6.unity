@@ -8549,8 +8549,7 @@ MonoBehaviour:
   knockbackForce: 5
   playerDeathEffect: {fileID: 9068365207153026038, guid: 527e086e03f434041851534ca2c4d718, type: 3}
   hitRecoveryTime: 0.2
-  playerHitSound: {fileID: 0}
-  playerDeathSound: {fileID: 0}
+  playerHitSound: {fileID: 8300000, guid: eb44f60c47207ed4cb968b167d9fb967, type: 3}
 --- !u!82 &2037481615
 AudioSource:
   m_ObjectHideFlags: 0

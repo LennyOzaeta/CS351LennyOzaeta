@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-    Follow Along Lesson 7 & 8
+    Follow Along Lesson 7, 8, 9
     Description: Enemy class that controls enemy's behavior/animation (attach this script to enemy GameObject)
 */
 
 public class Enemy : MonoBehaviour
 {
     public int health = 100; // Enemy's health
-
     public GameObject deathEffect; // Prefab to spawn when enemy dies
-
     private DisplayBar healthBar; // Reference to health bar
+    public int damage = 10; // Damage enemy deals to player
 
     private void Start()
     {
@@ -45,5 +44,26 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, Quaternion.identity); // Spawn death effect
 
         Destroy(gameObject); // Destroy enemy
+    }
+
+    // This function damages player when enemy collides with them
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            // Get player health script from player object
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+            // Check if PlayerHealth script is null
+            if(playerHealth == null)
+            {
+                // Log an error if PlayerHealth script is null
+                Debug.LogError("PlayerHealth script not found on player");
+                return;
+            }
+
+            playerHealth.TakeDamage(damage); // Damage player
+            playerHealth.Knockback(transform.position); // Knockback player
+        }
     }
 }
