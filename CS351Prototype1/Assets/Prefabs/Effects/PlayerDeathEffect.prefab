@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6894112f0e54741b31c4a061212e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 8300000, guid: eb44f60c47207ed4cb968b167d9fb967, type: 3}
+  soundToPlay: {fileID: 8300000, guid: 93d78285f35938447b6f3662d0623047, type: 3}
   volume: 1
 --- !u!82 &8007918832446105753
 AudioSource:

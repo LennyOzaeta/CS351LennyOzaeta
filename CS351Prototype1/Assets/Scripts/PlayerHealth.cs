@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // References to play sound effects
     private AudioSource playerAudio;
     public AudioClip playerHitSound;
-    // public AudioClip playerDeathSound;[REMOVED]
+    // public AudioClip playerDeathSound; // [REMOVED]
 
     private Animator animator;
 
