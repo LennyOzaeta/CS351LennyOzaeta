@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShootingPlatformerStart.unity
     guid: 237981144fa22484290134b5aecb45ad
+  - enabled: 1
+    path: Assets/Scenes/ShootingPlatformerStartAssignment6.unity
+    guid: e6d15783fe5fdcc40a4e64f8f276c232
   m_configObjects: {}

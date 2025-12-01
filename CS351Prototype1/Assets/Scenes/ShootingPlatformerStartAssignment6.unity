@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 21717524}
   - component: {fileID: 21717523}
   - component: {fileID: 21717527}
+  - component: {fileID: 21717528}
+  - component: {fileID: 21717529}
   m_Layer: 0
   m_Name: CrabEnemy
   m_TagString: Untagged
@@ -271,6 +273,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &21717528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21717522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93afa0c32423ac94ead4d867f6961452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 4
+  enemyMovementSpeed: 1.5
+--- !u!50 &21717529
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21717522}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &93407564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,7 +1383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8344779492339246507, guid: 43ee1c0fda6a56544b3e418b6e2d2b84, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -181
+      value: -107.66
       objectReference: {fileID: 0}
     - target: {fileID: 8344779492339246507, guid: 43ee1c0fda6a56544b3e418b6e2d2b84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2832,7 +2869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 269.44, y: -181}
+  m_AnchoredPosition: {x: 269.44, y: -69.332}
   m_SizeDelta: {x: 462.2206, y: 73.33569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670638173
